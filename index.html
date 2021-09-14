@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Products</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <!-- ads -->
+  <div class="ad-details">
+    <img src="https://storage.sg.content-cdn.io/in-resources/d7048855-742a-406c-a67d-5c2962e69e5e/Images/userimages/Category_images/rings/jewring1.jpg" alt="">
+    <div class="ad-body">
+      <span>Lifetime Product Service</span>
+      <span>Free Product Insurance</span>
+      <span>14Days Return</span>
+      <span>Only Certified Jewellery</span>
+      <span>Product Detail Pricing</span>
+      <span>Easy Exchange</span>
+    </div>
+  </div>
+
+  <!-- Filter and product list container -->
+  <div class="grid-container">
+    <!-- Filter -->
+    <div class="product-filter">
+      <span id="heading">filter by</span>
+      <span class="down-arrow" onclick="filterList()" id="down-arrow"><i class="fas fa-angle-down"></i></span>
+      <div id="filter-list">
+        <!-- filter items -->
+        <div class="filter-item">
+          Price
+          <input type="button" id="toggle-0" onclick="toggle(0)" value="+">
+          <br>
+          <span id="filter-item-0" class="filter-item-content">
+            <input type="range" name="" id="max-price" onchange="changeMaxValue()" value="26076" min="13879" max="26076">
+            <span id="max-range-value">26076</span>
+          </span>
+        </div>
+        <div class="filter-item">
+          Gender
+          <input type="button" id="toggle-1" onclick="toggle(1)" value="+">
+          <br>
+          <span id="filter-item-1" class="filter-item-content">
+            <ul>
+              <li>
+                <input type="checkbox" id="male" name="gender" value="male">
+                <label for="male">Male</label>
+              </li>
+              <li>
+                <input type="checkbox" id="female" name="gender" value="female">
+                <label for="female">Female</label>
+              </li>
+            </ul>
+          </span>
+        </div>
+        <div class="filter-item">
+          Type
+          <input type="button" id="toggle-2" onclick="toggle(2)" value="+">
+          <br>
+          <span id="filter-item-2" class="filter-item-content">
+            <ul>
+              <li>
+                <input type="checkbox" id="diamond" name="rings" value="diamond">
+                <label for="diamond">Diamond Rings</label>
+              </li>
+              <li>
+                <input type="checkbox" id="gold" name="rings" value="gold">
+                <label for="gold">Gold Rings</label>
+              </li>
+            </ul>
+          </span>
+        </div>
+        <div class="filter-item">
+          Rating
+          <input type="button" id="toggle-3" onclick="toggle(3)" value="+">
+          <br>
+          <span id="filter-item-3" class="filter-item-content">
+            <ul>
+              <li>
+                <input type="radio" id="5-star" name="rating" value="5-star">
+                <label for="5-star">5 Star</label>
+              </li>
+              <li>
+                <input type="radio" id="4-star" name="rating" value="4-star">
+                <label for="4-star">4 Star</label>
+              </li>
+              <li>
+                <input type="radio" id="3-star" name="rating" value="3-star">
+                <label for="3-star">3 Star</label>
+              </li>
+              <li>
+                <input type="radio" id="2-star" name="rating" value="2-star">
+                <label for="2-star">2 Star</label>
+              </li>
+              <li>
+                <input type="radio" id="1-star" name="rating" value="1-star">
+                <label for="1-star">1 Star</label>
+              </li>
+            </ul>
+          </span>
+        </div>
+        <div class="filter-item">
+          Gold Purity
+          <input type="button" id="toggle-4" onclick="toggle(4)" value="+">
+          <br>
+          <span id="filter-item-4" class="filter-item-content">
+            <ul>
+              <li>
+                <input type="checkbox" id="14" name="purity" value="14">
+                <label for="14">14 kt</label>
+              </li>
+              <li>
+                <input type="checkbox" id="18" name="purity" value="18">
+                <label for="18">18 kt</label>
+              </li>
+              <li>
+                <input type="checkbox" id="22" name="purity" value="22">
+                <label for="22">22 kt</label>
+              </li>
+            </ul>
+          </span>
+        </div>
+        <div class="filter-item">
+          Metal Color
+          <input type="button" id="toggle-5" onclick="toggle(5)" value="+">
+          <br>
+          <span id="filter-item-5" class="filter-item-content">
+            <ul>
+              <li>
+                <input type="checkbox" id="yellow" name="color" value="yellow">
+                <label for="yellow">Yellow</label>
+              </li>
+              <li>
+                <input type="checkbox" id="white" name="color" value="white">
+                <label for="white">White</label>
+              </li>
+              <li>
+                <input type="checkbox" id="rose" name="color" value="rose">
+                <label for="rose">Rose</label>
+              </li>
+            </ul>
+          </span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- product list -->
+    <div class="products-list">
+      <span id="heading">Daily wear rings</span>
+      <div class="sort">
+        Sort by
+        <select name="sort">
+          <option value="popularity">Popularity</option>
+          <option value="price_low">Price low to high</option>
+          <option value="price_high">Price high to low</option>
+          <option value="discount">Discount</option>
+          <option value="relevance">Relevance</option>
+        </select>
+      </div>
+      <div class="product-list-display">
+        <!-- products -->
+        <a href="#">
+          <div class="product">
+            <img class="product-img" src="https://storage.sg.content-cdn.io/cdn-cgi/image/%7Bwidth%7D,%7Bheight%7D,quality=75,format=auto/in-resources/d7048855-742a-406c-a67d-5c2962e69e5e/Images/ProductImages/Source/DIDR0159_1Y.jpg" alt="">
+            <div class="name">
+              Sybil Miracle Plate Diamond Ring
+            </div>
+            <br>
+            <div class="price">
+              <del> &#x20b9;29006</del>  &#x20b9;26076
+            </div>
+          </div>
+        </a>
+        <a href="#">
+          <div class="product">
+            <img class="product-img" src="https://storage.sg.content-cdn.io/cdn-cgi/image/%7Bwidth%7D,%7Bheight%7D,quality=75,format=auto/in-resources/d7048855-742a-406c-a67d-5c2962e69e5e/Images/ProductImages/Source/DIDR0158_1Y.jpg" alt="">
+            <div class="name">
+              Krishika Floral Miracle Plate Diamond Ring
+            </div>
+            <br>
+            <div class="price">
+              <del> &#x20b9;35649</del>  &#x20b9;13879
+            </div>
+          </div>
+        </a>
+        <a href="#">
+          <div class="product">
+            <img class="product-img" src="https://storage.sg.content-cdn.io/cdn-cgi/image/%7Bwidth%7D,%7Bheight%7D,quality=75,format=auto,fit=cover,g=top/in-resources/d7048855-742a-406c-a67d-5c2962e69e5e/Images/ProductImages/Source/HSR11_1W.jpg" alt="">
+            <div class="name">
+              Stacey Miracle Plate Diamond Ring
+            </div>
+            <br>
+            <div class="price">
+              <del> &#x20b9;18312</del>  &#x20b9;18251
+            </div>
+          </div>
+        </a>
+        <a href="#">
+          <div class="product">
+            <img class="product-img" src="https://storage.sg.content-cdn.io/cdn-cgi/image/%7Bwidth%7D,%7Bheight%7D,quality=75,format=auto/in-resources/d7048855-742a-406c-a67d-5c2962e69e5e/Images/ProductImages/Source/HSR03_1Y.jpg" alt="">
+            <div class="name">
+              Sumaya Flower Miracle Plate Diamond Ring
+            </div>
+            <br>
+            <div class="price">
+              <del> &#x20b9;19515</del>  &#x20b9;17544
+            </div>
+          </div>
+        </a>
+        <a href="#">
+          <div class="product">
+            <img class="product-img" src="https://storage.sg.content-cdn.io/cdn-cgi/image/%7Bwidth%7D,%7Bheight%7D,quality=75,format=auto/in-resources/d7048855-742a-406c-a67d-5c2962e69e5e/Images/ProductImages/Source/DIDR0115_1Y.JPG" alt="">
+            <div class="name">
+              Renaya Floral Miracle Plate Diamond Ring
+            </div>
+            <br>
+            <div class="price">
+              <del> &#x20b9;27976</del>  &#x20b9;25150
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+
+</body>
+
+<script>
+function toggle(id) {
+  let element = document.getElementById('filter-item-' + id);
+  let toggle = document.getElementById('toggle-' + id);
+  if (element.style.display == 'block') {
+    element.style.display = 'none'
+    toggle.value = '+'
+  } else {
+    element.style.display = 'block'
+    toggle.value = '-'
+  }
+}
+
+function changeMaxValue() {
+  let element = document.getElementById('max-price');
+  let result = document.getElementById('max-range-value');
+  result.innerHTML = element.value;
+}
+
+function filterList() {
+  let element = document.getElementById('filter-list');
+  if (element.style.display == 'block') {
+    element.style.display = 'none'
+  } else {
+    element.style.display = 'block'
+  }
+}
+
+
+</script>
+</html>
